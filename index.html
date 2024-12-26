@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Fun Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Basketball Fun Facts</h1>
+    <ul id="facts-list"></ul>
+    <script>
+        const facts = [
+            "Basketball was invented by Dr. James Naismith in 1891.",
+            "The first official basketball game was played on January 20, 1892.",
+            "The original game used a soccer ball and peach baskets as goals.",
+            "The NBA was formed in 1946 as the Basketball Association of America.",
+            "Gheorghe Mureșan is the tallest player in NBA history at 7 feet 7 inches.",
+            "Muggsy Bogues is the shortest player in NBA history at 5 feet 3 inches.",
+            "Bill Russell was the first African American head coach in the NBA in 1966.",
+            "Wilt Chamberlain scored 100 points in a single NBA game on March 2, 1962.",
+            "The three-point line was introduced in the NBA in the 1979-1980 season.",
+            "Michael Jordan won six NBA championships with the Chicago Bulls.",
+            "The 1992 U.S. Olympic basketball team was known as the 'Dream Team'.",
+            "Ann Meyers Drysdale was the first woman to sign a contract with an NBA team.",
+            "Kareem Abdul-Jabbar holds the record for the most points scored in NBA history.",
+            "The Naismith Memorial Basketball Hall of Fame is located in Springfield, Massachusetts.",
+            "The first NBA Slam Dunk Contest was held during the 1976-77 season.",
+            "Basketball is one of the most popular sports worldwide.",
+            "The WNBA was founded in 1996 and began play in 1997.",
+            "Shaquille O'Neal had a career free-throw shooting average of 52.7%.",
+            "The first basketball video game was released by Atari in 1978.",
+            "LeBron James is known for his versatility on the court."
+        ];
+
+        const factsList = document.getElementById('facts-list');
+
+        facts.forEach(fact => {
+            const listItem = document.createElement('li');
+            listItem.textContent = fact;
+            factsList.appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
