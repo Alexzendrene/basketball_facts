@@ -7,32 +7,80 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
-            padding: 0;
             background-color: #f4f4f9;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        h1 {
-            color: #333;
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 500px;
+            overflow: hidden;
         }
 
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .card-header {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
         }
 
-        li {
-            background-color: #fff;
-            margin: 5px 0;
-            padding: 10px;
+        .card-header h2 {
+            margin: 0;
+        }
+
+        .card-body {
+            padding: 20px;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .card-footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+            border-top: 1px solid #eee;
+        }
+
+        .btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
             border-radius: 5px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <h1>Basketball Fun Facts</h1>
-    <ul id="facts-list"></ul>
+    <div class="card">
+        <div class="card-header">
+            <h2>Basketball Fun Facts</h2>
+        </div>
+        <div class="card-body">
+            <div id="fact-display"></div>
+        </div>
+        <div class="card-footer">
+            <button class="btn" id="next-fact">Next Fact</button>
+        </div>
+    </div>
+
     <script>
         const facts = [
             "Basketball was invented by Dr. James Naismith in 1891.",
@@ -57,13 +105,19 @@
             "LeBron James is known for his versatility on the court."
         ];
 
-        const factsList = document.getElementById('facts-list');
+        let currentFactIndex = 0;
+        const factDisplay = document.getElementById('fact-display');
+        const nextButton = document.getElementById('next-fact');
 
-        facts.forEach(fact => {
-            const listItem = document.createElement('li');
-            listItem.textContent = fact;
-            factsList.appendChild(listItem);
+        // Display initial fact
+        factDisplay.textContent = facts[currentFactIndex];
+
+        // Add click event listener to button
+        nextButton.addEventListener('click', () => {
+            currentFactIndex = (currentFactIndex + 1) % facts.length;
+            factDisplay.textContent = facts[currentFactIndex];
         });
     </script>
 </body>
 </html>
+
